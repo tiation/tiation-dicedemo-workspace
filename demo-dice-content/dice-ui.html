@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DnD Dice Roller Demo</title>
+    <style>
+        .dice-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+        }
+        .dice-button {
+            padding: 15px 20px;
+            font-size: 18px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .dice-button:hover {
+            transform: scale(1.05);
+        }
+        .results {
+            margin: 20px;
+            padding: 15px;
+            background: #f4f4f4;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DnD Dice Roller Demo</h1>
+    
+    <div class="dice-container">
+        <button class="dice-button" onclick="rollDice(4)">d4</button>
+        <button class="dice-button" onclick="rollDice(6)">d6</button>
+        <button class="dice-button" onclick="rollDice(8)">d8</button>
+        <button class="dice-button" onclick="rollDice(10)">d10</button>
+        <button class="dice-button" onclick="rollDice(12)">d12</button>
+        <button class="dice-button" onclick="rollDice(20)">d20</button>
+        <button class="dice-button" onclick="rollDice(100)">d100</button>
+    </div>
+    
+    <div class="results" id="results">
+        Click a die to roll!
+    </div>
+    
+    <script src="dice-mechanics.js"></script>
+    <script>
+        const roller = new DiceRoller();
+        
+        function rollDice(sides) {
+            const result = roller.roll(sides);
+            document.getElementById('results').innerHTML = 
+                `<strong>d${sides}:</strong> ${result[0]}`;
+        }
+    </script>
+</body>
+</html>
