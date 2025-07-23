@@ -1,2 +1,3 @@
-# tiation-dicedemo-workspace
-Enterprise workspace for interactive dice demonstration and gaming mechanics
+# Tiation DiceDemo Workspace
+
+Enterprise workspace for interactive dice demonstration and gaming mechanics.
